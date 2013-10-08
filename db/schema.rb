@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131008175716) do
+ActiveRecord::Schema.define(:version => 20131008194537) do
 
   create_table "milestones", :force => true do |t|
     t.date     "start_date"
@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(:version => 20131008175716) do
     t.time     "end_time"
     t.text     "note"
     t.integer  "type_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
+    t.integer  "milestone_id"
   end
 
   create_table "users", :force => true do |t|

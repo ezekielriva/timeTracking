@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :projects_user
   has_many :projects, through: :projects_user
+  has_many :time_entries
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :first_name, :last_name, :username,
