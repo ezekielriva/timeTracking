@@ -1,5 +1,11 @@
 TimeTracking::Application.routes.draw do
   
+  resources :time_entries
+
+
+  resources :milestones
+
+
   devise_for :users
 
   resources :statuses

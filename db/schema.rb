@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001150849) do
+ActiveRecord::Schema.define(:version => 20131008175716) do
+
+  create_table "milestones", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.float    "estimated_time"
+    t.boolean  "active"
+    t.text     "description"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -29,6 +39,15 @@ ActiveRecord::Schema.define(:version => 20131001150849) do
 
   create_table "statuses", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "time_entries", :force => true do |t|
+    t.time     "start_time"
+    t.time     "end_time"
+    t.text     "note"
+    t.integer  "type_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
